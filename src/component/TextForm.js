@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Textarea(props) {
+export default function TextForm(props) {
     return (
         <div className="container my-5 py-4">
             <h1 className="title pb-2">{props.textareaTitle}</h1>
@@ -23,10 +23,10 @@ export default function Textarea(props) {
     )
 }
 
-Textarea.propTypes = {
-    textareaTitle: PropTypes.string
+TextForm.propTypes = {
+    TextFormTitle: PropTypes.string
 }
 
-Textarea.defaultProps = {
-    textareaTitle: 'Enter the text to analyze below'
+TextForm.defaultProps = {
+    TextFormTitle: 'Enter the text to analyze below'
 }
