@@ -1,8 +1,47 @@
+/* Light Plate 1 */
 :root{
   --nav-bg-color: #fff;
   --bg-color: #F8F9FA;
   --btn-bg-color: #000;
+  --btn-color: #fff;
   --color: #000;
+}
+
+/* Dark Plate 2 */
+.app_mode_bg_color_1F1D36{
+  --nav-bg-color: #1F1D36;
+  --bg-color: #1f1d36e0;
+  --btn-bg-color: #1F1D36;
+  --btn-color: #ffffff;
+  --color: #ffffff;
+}
+
+/* Dark Plate 3 */
+.app_mode_bg_color_3D0000{
+  --nav-bg-color: #000000;
+  --bg-color: #3D0000;
+  --btn-bg-color: #000000;
+  --btn-color: #b6b2b2;
+  --color: #b6b2b2;
+}
+
+/* Dark Plate 4 */
+.app_mode_bg_color_1E5F74{
+  --nav-bg-color: #1D2D50;
+  --bg-color: #1E5F74;
+  --btn-bg-color: #1D2D50;
+  --btn-color: #ebebee;
+  --color: #ebebee;
+}
+
+/* Light Plate 5 */
+.app_mode_bg_color_FF4D00{
+  --nav-bg-color: #000000;
+  --nav-color: #ffffff;
+  --bg-color: #f5f4f4;
+  --btn-bg-color: #FF4D00;
+  --btn-color: #ffffff;
+  --color: #FF4D00;
 }
 
 body{
@@ -19,21 +58,35 @@ body{
 }
 
 a,
+b,
+p,
+i,
 h1,
+h3,
+span,
 a:hover,
 .nav-link:hover{
-  color: var(--color);
-  opacity: 1;
+  color: var(--color) !important;
 }
 
-p,
+.btn{
+  color: var(--btn-color);
+  background: var(--btn-bg-color);
+}
+
+.btn:hover{
+  color: var(--btn-color);
+}
+
+
 .nav-link{
-  color: var(--color);
+  color: var(--color) !important;
   opacity: .6;
 }
 
 .nav-link.active{
   opacity: 1;
+  color: var(--color);
 }
 
 #exampleFormControlTextarea{
@@ -41,11 +94,15 @@ p,
   color: var(--color);
 }
 
+textarea::placeholder{
+  color: var(--color) !important;
+  opacity: .8;
+}
+
 button:focus,
 textarea:focus{
   outline: none !important;
   box-shadow: none !important;
-  border: 1px solid var(--color);
 }
 
 .preview{
@@ -54,4 +111,47 @@ textarea:focus{
 
 .preview::first-letter {
   text-transform: capitalize !important;
+}
+
+.app-style .app-mode .mode{
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+}
+
+.navbar .app_mode_bg_color_1F1D36{
+  background-color: #1F1D36;
+}
+.navbar .app_mode_bg_color_3D0000{
+  background-color: #3D0000;
+}
+.navbar .app_mode_bg_color_1E5F74{
+  background-color: #1E5F74;
+}
+.navbar .app_mode_bg_color_FF4D00{
+  background-color: #FF4D00;
+}
+.navbar .app_mode_bg_color_f5f4f4{
+  background-color: #f5f4f4;
+}
+
+
+/* if Orange Light Mode is enable */
+
+.app_mode_bg_color_FF4D00 .navbar *{
+  color: var(--nav-color) !important;
+}
+
+.app_mode_bg_color_FF4D00 .navbar a{
+  color: var(--nav-color) !important;
+} 
+
+.app_mode_bg_color_FF4D00 .btn{
+  color: var(--btn-color) !important;
 }
