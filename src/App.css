@@ -47,3 +47,11 @@ textarea:focus{
   box-shadow: none !important;
   border: 1px solid var(--color);
 }
+
+.preview{
+  text-transform: lowercase !important;
+}
+
+.preview::first-letter {
+  text-transform: capitalize !important;
+}
