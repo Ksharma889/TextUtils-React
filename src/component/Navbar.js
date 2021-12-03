@@ -3,11 +3,19 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
     const appMode = document.getElementsByTagName('body');
+    const navbarMode = document.getElementsByClassName('navbar');
     const app_mode_func = (event)=>{
-        appMode[0].classList = event.target.classList[0];
+        appMode[0].classList = `${event.target.classList[0]}` ;
+        if(event.target.classList[0] !== 'app_mode_bg_color_f5f4f4'){
+            navbarMode[0].classList.remove('navbar-light');
+            navbarMode[0].classList.add('navbar-dark');
+        }else{
+            navbarMode[0].classList.add('navbar-light');
+            navbarMode[0].classList.remove('navbar-dark');
+        }
     }
     return (
-        <nav className="navbar T navbar-expand-lg px-lg-5">
+        <nav className="navbar navbar-light navbar-expand-lg px-lg-5">
             <div className="container-fluid">
                 <a className="navbar-brand" href="/"><b><i>{props.title}</i></b></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
