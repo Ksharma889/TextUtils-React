@@ -155,3 +155,15 @@ textarea:focus{
 .app_mode_bg_color_FF4D00 .btn{
   color: var(--btn-color) !important;
 }
+
+.alert-container .alert{
+  position: absolute;
+  width: 100%;
+  animation: slide-up .2s ease-in;
+  -webkit-animation: slide-up .2s ease-in;
+}
+
+@keyframes slide-up {
+  from {top: 30px;}
+  to {top: 0;}
+}

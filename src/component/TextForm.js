@@ -5,11 +5,13 @@ export default function TextForm(props) {
     const handleUpperTextClick = ()=>{
         const newText = text.toUpperCase();
         setText(newText);
+        props.showAlert('text convert to uppercase', 'success');
     }
 
     const handleLowerTextClick = ()=>{
         const newText = text.toLowerCase();
         setText(newText);
+        props.showAlert('text convert to lowercase', 'success');
     }
 
     const handleCapitalizeTextClick = ()=>{
@@ -20,20 +22,24 @@ export default function TextForm(props) {
         }
         const newText = capitalizeText(text);
         setText(newText);
+        props.showAlert('text capitalize successfully', 'success');
     }
 
     const handleClearTextClick = ()=>{
         const newText = "";
         setText(newText);
+        props.showAlert('text cleared successfully', 'success');
     }
 
     const handleCopyTextClick = ()=>{
         navigator.clipboard.writeText(text);
+        props.showAlert('text copid successfully', 'success');
     }
 
     const handleRemoveExtraSpaces = ()=>{
         const newText = text.replace(/\s+/g,' ');
         setText(newText);
+        props.showAlert('remove extra space from text', 'success');
     }
 
     const handleOnChange = (event)=>{
@@ -62,7 +68,8 @@ export default function TextForm(props) {
 }
 
 TextForm.propTypes = {
-    TextFormTitle: PropTypes.string
+    TextFormTitle: PropTypes.string,
+    showAlert: PropTypes.func.isRequired
 }
 
 TextForm.defaultProps = {
