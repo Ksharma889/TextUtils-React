@@ -26,8 +26,8 @@ function App() {
       <Navbar title="TextUtils" />
       <Alert alert={alert} />
       <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/" element={<TextForm showAlert={showAlert} />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/" element={<TextForm showAlert={showAlert} />} />
       </Routes>
     </BrowserRouter>
   );
