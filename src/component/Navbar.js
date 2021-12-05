@@ -15,6 +15,13 @@ export default function Navbar(props) {
             navbarMode[0].classList.remove('navbar-dark');
         }
     }
+    const activeClassFunc = (event)=>{
+        const activeNav = document.querySelectorAll('.navbar-nav .nav-link.active');
+        activeNav.forEach(e => {
+            e.classList.remove('active');
+        });
+        event.target.classList.add('active');
+    }
     return (
         <nav className="navbar navbar-light navbar-expand-lg px-lg-5">
             <div className="container-fluid">
@@ -25,10 +32,10 @@ export default function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                            <Link onClick={activeClassFunc} className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">{props.aboutText}</Link>
+                            <Link onClick={activeClassFunc} className="nav-link" to="/about">{props.aboutText}</Link>
                         </li>
                     </ul>
                     <div className="app-style d-flex align-items-center">

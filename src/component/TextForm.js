@@ -5,13 +5,13 @@ export default function TextForm(props) {
     const handleUpperTextClick = ()=>{
         const newText = text.toUpperCase();
         setText(newText);
-        props.showAlert('text convert to uppercase', 'success');
+        if(text.length) props.showAlert('text convert to uppercase', 'success');
     }
 
     const handleLowerTextClick = ()=>{
         const newText = text.toLowerCase();
         setText(newText);
-        props.showAlert('text convert to lowercase', 'success');
+        if(text.length) props.showAlert('text convert to lowercase', 'success');
     }
 
     const handleCapitalizeTextClick = ()=>{
@@ -22,24 +22,24 @@ export default function TextForm(props) {
         }
         const newText = capitalizeText(text);
         setText(newText);
-        props.showAlert('text capitalize successfully', 'success');
+        if(text.length) props.showAlert('text capitalize successfully', 'success');
     }
 
     const handleClearTextClick = ()=>{
         const newText = "";
         setText(newText);
-        props.showAlert('text cleared successfully', 'success');
+        if(text.length) props.showAlert('text cleared successfully', 'success');
     }
 
     const handleCopyTextClick = ()=>{
         navigator.clipboard.writeText(text);
-        props.showAlert('text copid successfully', 'success');
+        if(text.length) props.showAlert('text copid successfully', 'success');
     }
 
     const handleRemoveExtraSpaces = ()=>{
         const newText = text.replace(/\s+/g,' ');
         setText(newText);
-        props.showAlert('remove extra space from text', 'success');
+        if(text.length) props.showAlert('remove extra space from text', 'success');
     }
 
     const handleOnChange = (event)=>{
@@ -59,8 +59,8 @@ export default function TextForm(props) {
                 <button type="button" onClick={handleRemoveExtraSpaces} className="btn my-2 mx-1">Remove Extra Spaces</button>
             </div>
             <h3>Your Text Summary</h3>
-            <p>{((text.trim().split(" ")).filter((e) => e !== "")).length} word and {text.length} character</p>
-            <p>{0.008 * text.split(" ").length} Minutes to read</p>
+            <p>{((text.split(/\s+/)).filter((e) => e !== "")).length} word and {text.length} character</p>
+            <p>{0.008 * text.split(/\s+/).filter((e) => e !== "").length} Minutes to read</p>
             <h3>Preview</h3>
             <p className='preview'>{text.length>0? text : 'Enter something in the textarea above to preview it here'}</p>
         </div>

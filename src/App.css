@@ -63,9 +63,8 @@ p,
 i,
 h1,
 h3,
-span,
-a:hover,
-.nav-link:hover{
+span
+{
   color: var(--color) !important;
 }
 
@@ -84,6 +83,8 @@ a:hover,
   opacity: .6;
 }
 
+a:hover,
+.nav-link:hover,
 .nav-link.active{
   opacity: 1;
   color: var(--color);
@@ -159,11 +160,11 @@ textarea:focus{
 .alert-container .alert{
   position: absolute;
   width: 100%;
-  animation: slide-up .2s ease-in;
-  -webkit-animation: slide-up .2s ease-in;
+  animation: slide-up .1s ease-in;
+  -webkit-animation: slide-up .1s ease-in;
 }
 
 @keyframes slide-up {
-  from {top: 30px;}
+  from {top: 10px;}
   to {top: 0;}
 }
