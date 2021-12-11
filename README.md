@@ -1,4 +1,4 @@
-## Add TextUtils App Dark Mode Panel
+## Add TextUtils App Dark / Theme Mode Panel
 
 # Getting Started with Create React App
 
